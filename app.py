@@ -167,12 +167,13 @@ Offline Internship | January 2025
 """)
 
 st.write("""
-**Data Science Virtual Intern – TATA**  
+**Data Visualisation Virtual Intern – TATA**  
 Micro-Internship | January 2025  
 
-- Learned fundamentals of data analysis and data-driven problem solving  
-- Worked on basic data handling and analytical thinking tasks  
-- Gained exposure to industry-oriented data science use cases  
+- Framing the Business Scenario  
+- Choosing the Right Visuals
+- Creating Effective Visuals
+- Communicating Insights and Analysis
 """)
 
 st.markdown("### 📜 Certifications")
