@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Rajasekar | Data Analyst Portfolio", layout="wide")
 
@@ -40,61 +42,100 @@ with col2:
     st.write("- Database Fundamentals")
 
 st.markdown("---")
-st.subheader("🎓 Final Year Project")
+# ================================
+# 📌 PROJECTS SECTION
+# ================================
 
-st.markdown("### 📌 Project Title")
-st.write(
-    "A Hybrid Machine Learning Framework for Disease Risk Assessment and Safe Drug Recommendation"
-)
+st.markdown("---")
+st.subheader("📂 Projects")
+
+# ------------------------------------------------
+# PROJECT 1: END-TO-END CUSTOMER ANALYTICS & CHURN
+# ------------------------------------------------
+st.markdown("## 📈 End-to-End Customer Analytics and Churn Prediction Platform")
+
+st.write("""
+Developed an end-to-end analytics and machine learning platform to analyze customer behavior
+and predict churn risk. The system helps businesses identify high-risk customers, understand
+churn patterns, and simulate churn risk for new customer profiles to support data-driven
+retention strategies.
+""")
+
+st.markdown("### 🛠️ Key Contributions")
+st.write("""
+- Cleaned and preprocessed real-world telecom customer data using Pandas  
+- Performed customer analytics and KPI-based churn analysis  
+- Built and evaluated Logistic Regression, Decision Tree, and Random Forest models  
+- Selected Random Forest for deployment based on performance and recall  
+- Implemented churn probability scoring with Low / Medium / High risk classification  
+- Persisted trained models using Pickle for reuse without retraining  
+- Built an interactive Streamlit dashboard for analytics, prediction, and simulation  
+""")
+
+st.markdown("**Technologies:** Python, Pandas, NumPy, Scikit-learn, Pickle, Streamlit, Git, GitHub")
+
+# ------------------------------------------------
+# PROJECT 2: SALES DATA ANALYSIS DASHBOARD
+# ------------------------------------------------
+st.markdown("---")
+st.markdown("## 📊 Sales Data Analysis Dashboard")
+
+st.write("""
+Developed a data analytics dashboard to analyze sales performance across regions, products,
+and time periods. The project focuses on transforming raw sales data into meaningful insights
+to support business decision-making.
+""")
+
+st.markdown("### 🛠️ Key Contributions")
+st.write("""
+- Cleaned and processed raw sales data using Pandas  
+- Performed exploratory data analysis to identify trends and patterns  
+- Stored structured data using SQLite for lightweight database operations  
+- Created visualizations using Matplotlib for key sales metrics  
+- Built an interactive Streamlit dashboard to display KPIs and charts  
+""")
+
+st.markdown("**Technologies:** Python, Pandas, NumPy, SQLite, Matplotlib, Streamlit, Git, GitHub")
+
+# ------------------------------------------------
+# PROJECT 3: FINAL YEAR PROJECT (ACADEMIC)
+# ------------------------------------------------
+st.markdown("---")
+st.markdown("## 🎓 Final Year Project")
+st.markdown("### A Hybrid Machine Learning Framework for Disease Risk Assessment and Safe Drug Recommendation")
 
 st.markdown("### 🧩 Problem Statement")
 st.write("""
-Traditional healthcare systems often handle disease prediction, drug recommendation,
-and drug safety checks as separate processes. This fragmentation can lead to inefficiencies,
-delayed decision-making, and potential medication risks.
+Traditional healthcare systems often treat disease prediction, drug recommendation,
+and safety validation as separate processes, leading to inefficiencies and increased
+medication risk.
 """)
 
 st.markdown("### 🎯 Objective")
 st.write("""
-The objective of this project is to develop an intelligent healthcare system that:
-- Predicts diseases based on patient health data using machine learning
-- Recommends suitable drugs for the predicted disease
-- Performs safety validation to reduce potential medication risks
-""")
-
-st.markdown("### 🛠️ Tools & Technologies")
-st.write("""
-- Python  
-- Pandas, NumPy  
-- Machine Learning Algorithms  
-- MySQL  
+- Predict diseases based on patient health data using machine learning  
+- Recommend suitable drugs for the predicted disease  
+- Validate drug safety to reduce potential medication risks  
 """)
 
 st.markdown("### ⭐ Key Features")
 st.write("""
 - Machine learning–based disease prediction  
-- Drug recommendation for predicted diseases  
-- Safety validation to minimize medication risks  
+- Drug recommendation logic  
+- Safety validation layer  
 - Structured data processing and analysis  
 """)
 
-st.markdown("### ✅ Outcome")
-st.write("""
-This project demonstrates the application of machine learning and data analytics
-in healthcare to support disease prediction and safer drug recommendations.
-""")
+st.markdown("**Technologies:** Python, Pandas, NumPy, Machine Learning Algorithms, MySQL")
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-
+# ------------------------------------------------
+# PROJECT 4: DATA ANALYTICS DEMO
+# ------------------------------------------------
 st.markdown("---")
-st.subheader("📊 Data Analytics Demo")
+st.subheader("📊 Data Analytics Demo – Student Performance Analysis")
 
 st.write("""
-**Student Performance Analysis**
-
-This demo showcases my ability to perform exploratory data analysis using Python.
+This demo showcases exploratory data analysis skills using Python.
 The dataset contains student scores in mathematics, reading, and writing.
 """)
 
@@ -106,11 +147,9 @@ except FileNotFoundError:
     st.error("Dataset file not found. Please ensure 'StudentsPerformance.csv' is in the project folder.")
     st.stop()
 
-# Dataset preview
 st.markdown("### 🔍 Dataset Preview")
 st.dataframe(df.head())
 
-# Statistical summary
 st.markdown("### 📈 Statistical Summary")
 st.dataframe(df.describe())
 
@@ -120,24 +159,17 @@ gender_avg = df.groupby("gender")[["math score", "reading score", "writing score
 
 fig, ax = plt.subplots(figsize=(5, 3.2))
 
+gender_avg.plot(kind="bar", ax=ax, width=0.6)
 
-gender_avg.plot(
-    kind="bar",
-    ax=ax,
-    width=0.6
-)
-
-ax.set_title("Average Scores by Gender", fontsize=12)
+ax.set_title("Average Scores by Gender", fontsize=11)
 ax.set_ylabel("Average Score")
 ax.set_xlabel("Gender")
 ax.set_xticklabels(gender_avg.index, rotation=0)
 
-# Legend outside top-right (no overlap)
 ax.legend(
     title="Subject",
     loc="upper left",
     bbox_to_anchor=(1.02, 1),
-    borderaxespad=0,
     frameon=False
 )
 
