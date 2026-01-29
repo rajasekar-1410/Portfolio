@@ -225,7 +225,5 @@ st.write("""
 
 💻 **GitHub:** https://github.com/rajasekar-1410  
 
-📞 **Phone:** 9150664818  
-
 📍 **Location:** Villupuram, Tamil Nadu, India
 """)
